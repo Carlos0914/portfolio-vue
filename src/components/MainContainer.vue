@@ -36,39 +36,46 @@ export default {
   background-color: white;
   border: 1px solid #969696;
   box-shadow: 8px 8px 8px #8a8686;
+}
 
-  @media (min-width: 600px) {
+
+@media (min-width: 600px) {
+  .container {
     padding-right: 0;
   }
 
-  @media (min-width: 760px) {
+  .i-1 {
+    padding-right: 0.5rem;
+  }
+
+  .i-2 {
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 760px) {
+  .container {
     max-width: calc(100vw - 7rem - 252px);
   }
 }
 
 .c-1 {
   max-width: calc(100vw - 5rem - 2px);
-  padding: 2rem 0.5rem;
+  padding: 2rem 0;
 }
 
 .i-1 {
   overflow: auto;
-
-  @media (min-width: 600px) {
-    padding-right: 0.5rem;
-  }
+  padding: 0 0.5rem
 }
 
 .c-2 {
   max-width: calc(100vw - 6rem - 2px);
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .i-2 {
   overflow: auto;
-
-  @media (min-width: 600px) {
-    padding-right: 2rem;
-  }
+  padding: 0 2rem;
 }
 </style>

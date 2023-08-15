@@ -14,13 +14,12 @@ export default {
   },
   computed: {
     customStyle () {
-      console.log(this)
       return {
         width: this.width + 'px',
         height: (this.height && this.height + 'px') || "auto",
-        borderRadius: '40px',
-        maxWidth: '100%',
-        objectFit: "scale-down",
+        'border-radius': '40px',
+        'max-width': '100%',
+        'object-fit': "scale-down",
         ...this.style
       };
     }
