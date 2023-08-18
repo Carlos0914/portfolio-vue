@@ -2,6 +2,7 @@
 import NavButton from './NavButton.vue';
 import Image from './Image.vue';
 import "../style.css"
+import { t } from '../utils/i18n';
 
 </script>
 
@@ -12,11 +13,11 @@ import "../style.css"
     <span class="image-container">
       <Image src="/logo.jpeg" :style="{ 'border-radius': 0, 'max-height': '128px', filter: 'invert(1)' }" />
     </span>
-    <NavButton text="Sobre mí" path="" />
-    <NavButton text="Servicios" path="services" />
-    <NavButton text="Historia Laboral" path="history" />
-    <NavButton text="Proyectos" path="projects" />
-    <NavButton text="Contacto" path="contact" />
+    <NavButton :text="t('navbar.about')" path="/" />
+    <NavButton :text="t('navbar.services')" path="/services" />
+    <NavButton :text="t('navbar.history')" path="/history" />
+    <NavButton :text="t('navbar.projects')" path="/projects" />
+    <NavButton :text="t('navbar.contact')" path="/contact" />
     <!-- <LanguageSelector /> -->
   </div>
 </template>
@@ -44,8 +45,7 @@ import "../style.css"
 }
 
 .nav-container {
-  max-width: calc(320px - 8rem);
-  min-width: calc(320px - 8rem);
+  min-width: 258px;
   border-radius: 40px;
   flex-direction: column;
   min-height: 350px;

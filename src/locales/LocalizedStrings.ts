@@ -1,6 +1,9 @@
-import LocalizedStrings from "react-localization";
 
-export const strings = new LocalizedStrings({
+type Messages = {
+  [key: string]: Object
+}
+
+export const messages: Messages = {
   en: {
     other: {
       here: "here",
@@ -303,4 +306,4 @@ export const strings = new LocalizedStrings({
       services: "Servicios | Carlos López",
     },
   },
-});
+}

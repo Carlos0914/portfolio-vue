@@ -1,21 +1,21 @@
 <template>
-  <img :src='src' v-bind="$attrs" loading="lazy" :style="customStyle"/>
+  <img :src='src' v-bind="$attrs" loading="lazy" :style="customStyle" />
 </template>
 
-<script lang="ts">
+<script lang="js">
 export default {
-  
+
   props: {
     src: String,
-    width: Number,
+    width: String | Number,
     height: Number,
     style: Object,
     attrs: Object
   },
   computed: {
-    customStyle () {
+    customStyle() {
       return {
-        width: this.width + 'px',
+        width: isNaN(this.width) ? this.width : this.width + 'px',
         height: (this.height && this.height + 'px') || "auto",
         'border-radius': '40px',
         'max-width': '100%',
