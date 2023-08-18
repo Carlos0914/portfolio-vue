@@ -30,4 +30,4 @@ app.use(i18n);
 app.use(router);
 app.mount("#app");
 
-import "bootstrap/dist/js/bootstrap.min"
+import "bootstrap"

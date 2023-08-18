@@ -1,11 +1,14 @@
 <template>
-  <span class="info-row">
+  <span v-bind="$attrs" class="info-row">
     <slot :child-data="children"></slot>
   </span>
 </template>
 
 <script lang="ts">
 export default {
+  props: {
+    attrs: Object
+  },
   data() {
     return {
       children: []
@@ -22,18 +25,19 @@ export default {
   justify-content: center;
   gap: 10px;
   row-gap: 0;
+}
 
-  & span {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+::v-deep span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  & p {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-}</style>
+::v-deep p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+</style>

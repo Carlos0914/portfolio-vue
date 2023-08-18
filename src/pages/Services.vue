@@ -9,7 +9,6 @@ import Navbar from '../components/Navbar.vue';
     <Navbar />
     <MainContainer>
         <h2>{{ t('navbar.services') }}</h2>
-        {{ console.log(images[0]) }}
         <div v-for="(title, index) in messages.services.titles" :key="index">
             <div v-if="index%2 === 0" class="row">
                 <div class="image" :style="`background-image: url(${images[index]})`"/>
@@ -26,7 +25,6 @@ import Navbar from '../components/Navbar.vue';
                 <div class="image" :style="`background-image: url(${images[index]})`"/>
             </div>
         </div>
-        <!-- <div v-for="(title, index) in t('services')"" -->
     </MainContainer>
 </template>
 
