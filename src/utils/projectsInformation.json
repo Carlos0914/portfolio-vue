@@ -1,0 +1,119 @@
+[
+    {
+        "title": "Lozmar",
+        "media": "Lozmar",
+        "key": "lozmar",
+        "sites": [
+            {
+                "url": "https://ccp.applozmar.com",
+                "active": true
+            }
+        ],
+        "technologies": [
+            "MONGODB",
+            "EXPRESS",
+            "REACT",
+            "NODE",
+            "CSS"
+        ]
+    },
+    {
+        "title": "Stellar menus",
+        "media": "StellarMenus",
+        "key": "stellarmenus",
+        "sites": [
+            {
+                "url": "https://app.stellarmenus.com",
+                "active": true
+            },
+            {
+                "url": "https://menu.stellarmenus.com",
+                "active": true
+            },
+            {
+                "url": "https://print.stellarmenus.com",
+                "active": true
+            }
+        ],
+        "technologies": [
+            "MONGODB",
+            "EXPRESS",
+            "REACT",
+            "NODE",
+            "CSS"
+        ]
+    },
+    {
+        "title": "Brandverge",
+        "media": "Brandverge",
+        "key": "brandverge",
+        "sites": [
+            {
+                "url": "https://app.gobrandverge.com",
+                "active": true
+            }
+        ],
+        "technologies": [
+            "POSTGRESQL",
+            "EXPRESS",
+            "REACT",
+            "NODE",
+            "CSS"
+        ]
+    },
+    {
+        "title": "8Stem",
+        "media": "8Stem",
+        "key": "8stem",
+        "sites": [
+            {
+                "url": "https://mix8.com",
+                "active": false
+            },
+            {
+                "url": "https://www.8stem.com.mx",
+                "active": false
+            }
+        ],
+        "technologies": [
+            "RAILS",
+            "POSTGRESQL"
+        ]
+    },
+    {
+        "title": "Elevate Invesment",
+        "media": "Elevate",
+        "key": "elevate",
+        "sites": [
+            {
+                "url": "https://home.iyield.co/",
+                "active": false
+            }
+        ],
+        "technologies": [
+            "RAILS",
+            "POSTGRESQL"
+        ]
+    },
+    {
+        "title": "Bilbo",
+        "media": "Bilbo",
+        "key": "bilbo",
+        "sites": [
+            {
+                "url": "https://app.bilbo.mx",
+                "active": false
+            },
+            {
+                "url": "https://www.bilbo.mx",
+                "active": true
+            }
+        ],
+        "technologies": [
+            "RAILS",
+            "POSTGRESQL",
+            "HAML",
+            "ELECTRONJS"
+        ]
+    }
+]

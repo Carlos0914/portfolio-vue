@@ -32,7 +32,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 350px;
-  max-height: calc(100vh - 8rem - 2px);
+  max-height: calc(100vh - 4rem - 2px);
   background-color: white;
   border: 1px solid #969696;
   box-shadow: 8px 8px 8px #8a8686;

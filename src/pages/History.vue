@@ -23,7 +23,6 @@ onMounted(() => {
 
 watch(toggled, () => {
     if (clickITCollapse && bilboCollapse) {
-        console.log(toggled.value)
         if (toggled.value === 0) {
             clickITCollapse.show()
             bilboCollapse.hide()

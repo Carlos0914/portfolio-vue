@@ -54,6 +54,7 @@ import Navbar from '../components/Navbar.vue';
 
     .row {
         display: flex;
+        margin: 0;
     }
 
     .row-reverse {
@@ -65,8 +66,8 @@ import Navbar from '../components/Navbar.vue';
             width: calc(100% - 2px);
         }
 
-        .content-right {
-            width: calc(100% - 22px);
+        .content-right, .content-left {
+            width: calc(100% - 2px);
         }
 
         .row {

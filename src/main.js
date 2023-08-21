@@ -6,8 +6,8 @@ import AboutMe from "./pages/AboutMe.vue";
 import Services from "./pages/Services.vue";
 import History from "./pages/History.vue";
 import Projects from "./pages/Projects.vue";
+import FlagIcon from 'vue-flag-icon';
 import Contact from "./pages/Contact.vue";
-import { messages } from "./locales/LocalizedStrings";
 import i18n from "./utils/i18n";
 
 
@@ -25,7 +25,9 @@ const router = createRouter({
   routes,
 });
 
+
 const app = createApp({});
+app.use(FlagIcon)
 app.use(i18n);
 app.use(router);
 app.mount("#app");

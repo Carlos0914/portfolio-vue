@@ -3,6 +3,7 @@ import NavButton from './NavButton.vue';
 import Image from './Image.vue';
 import "../style.css"
 import { t } from '../utils/i18n';
+import LanguageSelector from './LanguageSelector.vue';
 
 </script>
 
@@ -18,7 +19,7 @@ import { t } from '../utils/i18n';
     <NavButton :text="t('navbar.history')" path="/history" />
     <NavButton :text="t('navbar.projects')" path="/projects" />
     <NavButton :text="t('navbar.contact')" path="/contact" />
-    <!-- <LanguageSelector /> -->
+    <LanguageSelector />
   </div>
 </template>
 
