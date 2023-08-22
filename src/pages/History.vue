@@ -8,6 +8,11 @@ import { t } from '../utils/i18n';
 import { Collapse } from "bootstrap";
 import InfoRow from '../components/InfoRow.vue';
 import { onMounted, ref, watch } from 'vue';
+import { useHead } from "@unhead/vue"
+
+useHead({
+  title: () => t('meta.history'),
+})
 
 const toggled = ref(0)
 let clickITCollapse, bilboCollapse
@@ -46,27 +51,30 @@ watch(toggled, () => {
                 <div id="collapseClickit" :class="`collapse collapse-container`">
                     <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 20px;">
                         <InfoRow style="margin-top: 10px;">
+                            <calendarmonth />
                             <p>{{ t('history.clickit.date') }}</p>
                         </InfoRow>
                         <InfoRow>
                             <p>
+                                <account />
                                 {{ t('history.clickit.role') }}
                             </p>
                         </InfoRow>
                         <InfoRow>
                             <p>
+                                <Label />
                                 {{ t('history.clickit.line') }}
                             </p>
                         </InfoRow>
                         <InfoRow>
                             <p>
-
+                                <laptop />
                                 {{ t('history.clickit.tech') }}
                             </p>
                         </InfoRow>
                         <InfoRow style="marginBottom: 10px">
                             <p>
-
+                                <earth />
                                 <a style="color: #333333" href="https://www.clickittech.com" target="_blank"
                                     rel="noreferrer">
                                     https://www.clickittech.com
@@ -82,26 +90,31 @@ watch(toggled, () => {
                     <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 20px;">
                         <InfoRow style="marginTop: 10px">
                             <p>
+                                <calendarmonth />
                                 2020 - 2021
                             </p>
                         </InfoRow>
                         <InfoRow>
                             <p>
+                                <account />
                                 {{ t('history.bilbo.role') }}
                             </p>
                         </InfoRow>
                         <InfoRow>
                             <p>
+                                <Label />
                                 {{ t('history.bilbo.line') }}
                             </p>
                         </InfoRow>
                         <InfoRow>
                             <p>
+                                <laptop/>
                                 {{ t('history.bilbo.tech') }}
                             </p>
                         </InfoRow>
                         <InfoRow style="marginBottom: 10px">
                             <p>
+                                <earth />
                                 <a style="color: #333333" href="https://www.bilbo.mx" target="_blank" rel="noreferrer">
                                     https://www.bilbo.mx
                                 </a>
@@ -119,7 +132,7 @@ watch(toggled, () => {
     max-width: 500px;
     color: #333333;
     width: auto;
-    top: -6px;
+    top: 0px;
     background: #AAAAAA;
     margin: 0 auto;
     border-radius: 0 0 10px 10px;

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { RouteLocationRaw, RouterLink } from "vue-router"
-defineProps<{ text: String, path: String, active?: Boolean }>()
+defineProps<{ text: String, path: String, active?: Boolean, icon: String }>()
+
 
 </script>
 <template>
   <RouterLink class="link" :to="(path as RouteLocationRaw)" :active="active">
     <span>
+      <component :is="`${icon}`"/>
       <h4 style="font-size: inherit; margin-block-start: 1.33em; margin-block-end: 1.33em;">{{ text }}</h4>
     </span>
   </RouterLink>
@@ -26,7 +28,7 @@ defineProps<{ text: String, path: String, active?: Boolean }>()
 }
 
 .link:hover,
-.link[aria-selected=true] {
+.link[active="true"] {
   font-size: 1.2rem;
 }
 </style>

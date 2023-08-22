@@ -27,13 +27,13 @@ export default {
   row-gap: 0;
 }
 
-::v-deep span {
+:deep(span) {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-::v-deep p {
+:deep(p) {
   margin: 0;
   display: flex;
   align-items: center;

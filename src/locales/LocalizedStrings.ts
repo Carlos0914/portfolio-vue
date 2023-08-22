@@ -148,11 +148,11 @@ export const messages: Messages = {
       ],
     },
     meta: {
-      home: "Home | Carlos Lopez",
-      history: "Work history | Carlos Lopez",
-      projects: "Projects | Carlos Lopez",
-      contact: "Contact | Carlos Lopez",
-      services: "Services | Carlos Lopez",
+      home: "Home - Carlos Lopez",
+      history: "Work history - Carlos Lopez",
+      projects: "Projects - Carlos Lopez",
+      contact: "Contact - Carlos Lopez",
+      services: "Services - Carlos Lopez",
     },
   },
   es: {
@@ -168,7 +168,7 @@ export const messages: Messages = {
     },
     home: {
       line1:
-        "¡Bienvenido a mi sitio personal! Mi nombre es Carlos López, soy un Licenciado en Matemáticas Aplicadas que desarrolló un gran interes en la programación muy temprano durante mi carrera, llevandome a aventurarme en el mercado de desarrollo de sotware.",
+        "¡Bienvenido a mi sitio personal! Mi nombre es Carlos López, soy un Licenciado en Matemáticas Aplicadas que desarrolló un gran interes en la programación muy temprano durante mi carrera, llevandome a aventurarme en el mercado de desarrollo de software.",
       line2:
         "Con más de tres años de experiencia, me especializo en el desarrollo web full-stack con un mayor enfoque en el backend. Me apasiona mantenerme al día con las últimas novedades en tecnología y expandir mi conocimiento continuamente.",
       line3:
@@ -266,7 +266,7 @@ export const messages: Messages = {
     },
     contact: {
       headline:
-        "Si tienes alguna pregunta o quieres discutir alguna idea, puedes enviarme un mensage utlizando el formulario a continuación",
+        "Si tienes alguna pregunta o quieres discutir alguna idea, puedes enviarme un mensaje utlizando el formulario a continuación",
       send: "Enviar",
       contactLinkedin: "Si lo deseas, también puedes contactarme via {0}",
       nameLabel: "Nombre",
@@ -299,11 +299,11 @@ export const messages: Messages = {
       ],
     },
     meta: {
-      home: "Inicio | Carlos López",
-      history: "Historia laboral | Carlos López",
-      projects: "Proyectos | Carlos López",
-      contact: "Contacto | Carlos López",
-      services: "Servicios | Carlos López",
+      home: "Inicio - Carlos López",
+      history: "Historia laboral - Carlos López",
+      projects: "Proyectos - Carlos López",
+      contact: "Contacto - Carlos López",
+      services: "Servicios - Carlos López",
     },
   },
 }

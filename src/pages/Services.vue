@@ -3,23 +3,28 @@ import MainContainer from '../components/MainContainer.vue';
 import { t, messages } from "../utils/i18n"
 import images from "../assets/services"
 import Navbar from '../components/Navbar.vue';
+import { useHead } from "@unhead/vue"
+
+useHead({
+  title: () => t('meta.services'),
+})
 </script>
 
 <template>
     <Navbar />
     <MainContainer>
         <h2>{{ t('navbar.services') }}</h2>
-        <div v-for="(title, index) in messages.services.titles" :key="index">
+        <div v-for="(_, index) in messages.services.titles" :key="index">
             <div v-if="index%2 === 0" class="row">
                 <div class="image" :style="`background-image: url(${images[index]})`"/>
                 <div class="content-right">
-                    <h3>{{ title }}</h3>
+                    <h3>{{ t(`services.titles.${index}`) }}</h3>
                     <p style="text-align: justify;">{{ t(`services.items.${index}`) }}</p>
                 </div>
             </div>
             <div v-else class="row-reverse">
                 <div class="content-left">
-                    <h3>{{ title }}</h3>
+                    <h3>{{ t(`services.titles.${index}`) }}</h3>
                     <p style="text-align: justify;">{{ t(`services.items.${index}`) }}</p>
                 </div>
                 <div class="image" :style="`background-image: url(${images[index]})`"/>

@@ -4,7 +4,11 @@ import MainContainer from '../components/MainContainer.vue';
 import Navbar from '../components/Navbar.vue';
 import { send } from "@emailjs/browser"
 import { t } from '../utils/i18n';
+import { useHead } from "@unhead/vue"
 
+useHead({
+    title: () => t('meta.contact'),
+})
 const emailRegex = new RegExp(
     /^([a-zA-Z0-9_.+-]+)@[a-zA-Z0-9_.+-]+\.[a-zA-Z0-9_.+-]+$/,
     "gm"
@@ -65,23 +69,34 @@ const sendMail = async () => {
         <h2>{{ t('navbar.contact') }}</h2>
         <p>{{ t('contact.headline') }}</p>
         <div class="fields-container">
-            <input class="form-control" required name="nameinput" :error="Boolean(errors.name)"
-                :placeholder="t('contact.namePH')" :value="name" :label="t('contact.nameLabel')"
-                v-on:change="(e: any) => { name = e.target.value; errors = { ...errors, name: '' } }" />
-            <p v-if="errors.name.length > 0" class="error-message">{{ errors.name }}</p>
+            <span>
 
-            <input class="form-control" required :error="Boolean(errors.sender)" :placeholder="t('contact.emailPH')"
-                :value="sender" :label="t('contact.emailLabel')"
-                v-on:change="(e: any) => { sender = e.target.value; errors = { ...errors, sender: '' } }" />
-            <p v-if="errors.sender.length > 0" class="error-message">{{ errors.sender }}</p>
+                <label for="nameinput">{{ t('contact.nameLabel') }}</label>
+                <input class="form-control" required id="nameinput" :error="Boolean(errors.name)"
+                    :placeholder="t('contact.namePH')" :value="name"
+                    v-on:change="(e: any) => { name = e.target.value; errors = { ...errors, name: '' } }" />
+                <p v-if="errors.name.length > 0" class="error-message">{{ errors.name }}</p>
+            </span>
 
-            <textarea rows="5" required :error="Boolean(errors.message)" :placeholder="t('contact.messagePH')"
-                :value="message" :label="t('contact.messageLabel')"
-                v-on:change="(e: any) => { message = e.target.value; errors = { ...errors, message: '' } }" />
-            <p v-if="errors.message.length > 0" class="error-message">{{ errors.message }}</p>
+            <span>
+                <label for="mailinput">{{ t('contact.emailLabel') }}</label>
+                <input class="form-control" required id="mailinput" :error="Boolean(errors.sender)"
+                    :placeholder="t('contact.emailPH')" :value="sender"
+                    v-on:change="(e: any) => { sender = e.target.value; errors = { ...errors, sender: '' } }" />
+                <p v-if="errors.sender.length > 0" class="error-message">{{ errors.sender }}</p>
+            </span>
+            <span>
+                <label for="nameinput">{{ t('contact.messageLabel') }}</label>
+                <textarea class="form-control" rows="5" required id="msginput" :error="Boolean(errors.message)"
+                    :placeholder="t('contact.messagePH')" :value="message"
+                    v-on:change="(e: any) => { message = e.target.value; errors = { ...errors, message: '' } }" />
+                <p v-if="errors.message.length > 0" class="error-message">{{ errors.message }}</p>
+            </span>
 
-            <button class="btn btn-primary" v-on:click="sendMail" :disabled="Object.values(errors).some(Boolean)">{{
-                t('contact.send') }}</button>
+            <button class="btn btn-primary" v-on:click="sendMail" :disabled="Object.values(errors).some(Boolean)">
+                <send-icon />
+                {{ t('contact.send') }}
+            </button>
 
             <i18n-t keypath="contact.contactLinkedin" tag="p">
                 <a href="https://linkedin.com/in/carlos-lopez-dev" target="_blank" rel="noreferrer">
@@ -111,6 +126,17 @@ textarea[error="true"] {
 input[error="true"]::placeholder,
 textarea[error="true"]::placeholder {
     opacity: 0.9;
+}
+
+.fields-container span {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    line-height: 1.8;
+    padding: 0 2px
 }
 
 .error-message {

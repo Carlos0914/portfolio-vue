@@ -90,7 +90,7 @@ h4 {
 }
 
 a:hover,
-a[aria-selected=true] {
+a[active="true"] {
   color: #535bf2;
 }
 
@@ -144,7 +144,6 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  /* TODO: Change scrollbar color */
   background-color: #363636;
   border-radius: 10px;
 

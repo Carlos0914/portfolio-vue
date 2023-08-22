@@ -5,6 +5,11 @@ import ProjectCard from '../components/ProjectCard.vue';
 import { t } from '../utils/i18n';
 import projects from "../utils/projectsInformation.json"
 import { Carousel } from 'bootstrap'
+import { useHead } from "@unhead/vue"
+
+useHead({
+  title: () => t('meta.projects'),
+})
 </script>
 
 <template>
@@ -53,6 +58,7 @@ import { Carousel } from 'bootstrap'
 }
 
 .custom-carousel button {
+    border-color: #AAAAAA;
     background-color: #AAAAAA;
 }
 

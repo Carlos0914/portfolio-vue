@@ -13,33 +13,34 @@ import { messages } from '../utils/i18n';
         <div class="custom-card-header">
             {{ data.title }}
         </div>
-        <Image :src="projectlogos[data.media]" alt="logo"
-            style="object-fit: contain; padding: 0 20px; width: calc(100% - 40px);" :height=216 />
-        <div style="overflow: auto;">
+        <div style="height: 216px;">
+            <Image :src="projectlogos[data.media]" alt="logo"
+                style="object-fit: contain; padding: 0 20px; border-radius: 0;" :height=216 />
+        </div>
+        <div style="overflow: auto; margin: 6px 0">
             <p style="text-align: center; font-style: italic;">
                 {{ t(`projects.${data.key}.description`) }}
             </p>
             <InfoRow>
+                <calendarmonth />
                 {{ t(`projects.${data.key}.dates.0`) }}
                 <span style="color: #777777">({{ t(`projects.${data.key}.dates.1`) }})</span>
             </InfoRow>
 
             <InfoRow v-for="( site, index ) in  data.sites " key={index}>
-                <!-- {site.active ? (
-                <Public sx={{ color: "green" }} />
-                ) : (
-                <PublicOff sx={{ color: "red" }} />
-                )}{" "} -->
+                <earth v-if="site.active" style="color: green" />
+                <earthremove v-else style="color: red" />
                 <a class="site-link" :href="site.url" target="_blank" rel="noreferrer">
                     {{ site.url }}
                 </a>
             </InfoRow>
             <h4>{{ t('projects.labels.tasks') }}</h4>
             <ul style="text-align: left; margin: 0 16px; list-style: inside; font-size: 0.875rem;">
-                <li v-for="( task, index ) in messages.projects[data.key].tasks " key={index}>{{ t(`projects.${data.key}.tasks.${index}`) }}</li>
+                <li v-for="( task, index ) in messages.projects[data.key].tasks " key={index}>{{
+                    t(`projects.${data.key}.tasks.${index}`) }}</li>
             </ul>
             <h4>{{ t('projects.labels.tech') }}</h4>
-            <span style="display: flex , justify-content: center , gap: 12px, flex-wrap: wrap">
+            <span style="display: flex , justify-content: center , gap: 12px, flex-wrap: wrap;">
                 <Image v-for="( x ) in  data.technologies " :key="x" :src="logos[x].logo" :width=64
                     style="border-radius: 0" />
             </span>

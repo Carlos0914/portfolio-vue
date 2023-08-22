@@ -4,6 +4,9 @@ import Image from './Image.vue';
 import "../style.css"
 import { t } from '../utils/i18n';
 import LanguageSelector from './LanguageSelector.vue';
+import { router } from "../main"
+
+const currentRoute = router.currentRoute.value.path
 
 </script>
 
@@ -14,11 +17,11 @@ import LanguageSelector from './LanguageSelector.vue';
     <span class="image-container">
       <Image src="/logo.jpeg" :style="{ 'border-radius': 0, 'max-height': '128px', filter: 'invert(1)' }" />
     </span>
-    <NavButton :text="t('navbar.about')" path="/" />
-    <NavButton :text="t('navbar.services')" path="/services" />
-    <NavButton :text="t('navbar.history')" path="/history" />
-    <NavButton :text="t('navbar.projects')" path="/projects" />
-    <NavButton :text="t('navbar.contact')" path="/contact" />
+    <NavButton :text="t('navbar.about')" path="/" icon="account" :active="currentRoute === '/'" />
+    <NavButton :text="t('navbar.services')" path="/services" icon="faceagent" :active="currentRoute === '/services'" />
+    <NavButton :text="t('navbar.history')" path="/history" icon="briefcase" :active="currentRoute === '/history'" />
+    <NavButton :text="t('navbar.projects')" path="/projects" icon='laptop' :active="currentRoute === '/projects'" />
+    <NavButton :text="t('navbar.contact')" path="/contact" icon="email" :active="currentRoute === '/contact'" />
     <LanguageSelector />
   </div>
 </template>
@@ -64,7 +67,7 @@ import LanguageSelector from './LanguageSelector.vue';
   margin-bottom: 32px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 759px) {
   .image-container {
     margin-top: 12px;
   }

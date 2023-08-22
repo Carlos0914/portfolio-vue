@@ -3,18 +3,16 @@ import MainContainer from "../components/MainContainer.vue";
 import ProfilePicture from "../assets/pp.png";
 import Image from "../components/Image.vue";
 import { RouterLink } from "vue-router"
-// import {
-//   Assessment,
-//   CalendarMonth,
-//   Engineering,
-//   LocationOn,
-//   School,
-// } from "@mui/icons-material";
 import logos from "../assets/logos";
-// import Icon from "icon.jpeg"
 import InfoRow from "../components/InfoRow.vue";
 import Navbar from "../components/Navbar.vue";
 import { t } from "../utils/i18n"
+import { useHead } from "@unhead/vue"
+
+useHead({
+  title: () => t('meta.home'),
+})
+
 </script>
 
 <template>
@@ -35,6 +33,7 @@ import { t } from "../utils/i18n"
       </i18n-t>
       <div style="display: flow-root">
         <h2>
+          <school />
           {{ t('home.education') }}
         </h2>
         <ul>
@@ -42,19 +41,23 @@ import { t } from "../utils/i18n"
             <h4 style="margin: 8px 0">{{ t('home.degree') }}</h4>
             <InfoRow>
               <span>
+                <mapmarker />
                 {{ t('home.university') }}
               </span>
               <p class="separator" />
               <span>
+                <calendarmonth />
                 2017 - 2022
               </span>
             </InfoRow>
             <InfoRow>
               <span>
+                <school />
                 {{t('home.note')}}
               </span>
               <p class="separator" />
               <span>
+                <chartbox />
                 96.88 / 100
               </span>
             </InfoRow>
@@ -65,10 +68,12 @@ import { t } from "../utils/i18n"
             </h4>
             <InfoRow>
               <span>
+                <mapmarker />
                 Amazon Web Services
               </span>
               <p class="separator" />
               <span>
+                <calendarmonth />
                 2022
               </span>
             </InfoRow>
@@ -79,10 +84,12 @@ import { t } from "../utils/i18n"
             </h4>
             <InfoRow>
               <span>
+                <mapmarker />
                 Amazon Web Services
               </span>
               <p class="separator" />
               <span>
+                <calendarmonth />
                 2023
               </span>
             </InfoRow>
@@ -91,6 +98,7 @@ import { t } from "../utils/i18n"
       </div>
       <div style="display: flow-root">
         <h2>
+          <accounthardhat />
           {{ t('home.techStack') }}
         </h2>
         <h3>{{ t('home.main') }}</h3>

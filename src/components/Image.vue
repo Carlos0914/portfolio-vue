@@ -1,5 +1,5 @@
 <template>
-  <img :src='src' v-bind="$attrs" loading="lazy" :style="customStyle" />
+    <img :src='src' v-bind="$attrs" loading="lazy" :style="customStyle" />
 </template>
 
 <script lang="js">
