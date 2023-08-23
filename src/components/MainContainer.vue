@@ -70,7 +70,7 @@ export default {
 }
 
 .c-2 {
-  max-width: calc(100vw - 6rem - 2px);
+  max-width: unset;
   padding: 2rem 0;
 }
 

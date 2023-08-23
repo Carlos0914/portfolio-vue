@@ -14,7 +14,7 @@ useHead({
 
 <template>
     <Navbar />
-    <MainContainer>
+    <MainContainer :reduce-padding="true">
         <h2>{{ t('navbar.projects') }}</h2>
         <div id="projectsCarousel" class="custom-carousel carousel slide" data-bs-interval="2500">
             <div>

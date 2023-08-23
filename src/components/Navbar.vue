@@ -5,8 +5,17 @@ import "../style.css"
 import { t } from '../utils/i18n';
 import LanguageSelector from './LanguageSelector.vue';
 import { router } from "../main"
+import { Offcanvas } from 'bootstrap';
+import { onMounted } from 'vue';
 
 const currentRoute = router.currentRoute.value.path
+
+onMounted(() => {
+  const offcanvas = new Offcanvas(document.getElementById('navigation') as HTMLElement);
+  // offcanvas.hide()
+  (offcanvas as any)._backdrop._config.isVisible = false
+});
+
 
 </script>
 
@@ -24,9 +33,45 @@ const currentRoute = router.currentRoute.value.path
     <NavButton :text="t('navbar.contact')" path="/contact" icon="email" :active="currentRoute === '/contact'" />
     <LanguageSelector />
   </div>
+  <div class="dragarea mobileNav" data-bs-toggle="offcanvas" data-bs-target="#navigation" aria-controls="navigation" />
+  <div class="offcanvas offcanvas-bottom" tabindex="0" id="navigation">
+    <div class="offcanvas-body nav-container">
+      <p class="dragicon" />
+      <span class="image-container">
+        <Image src="/logo.jpeg" :style="{ 'border-radius': 0, 'max-height': '128px', filter: 'invert(1)' }" />
+      </span>
+      <NavButton :text="t('navbar.about')" path="/" icon="account" :active="currentRoute === '/'" />
+      <NavButton :text="t('navbar.services')" path="/services" icon="faceagent" :active="currentRoute === '/services'" />
+      <NavButton :text="t('navbar.history')" path="/history" icon="briefcase" :active="currentRoute === '/history'" />
+      <NavButton :text="t('navbar.projects')" path="/projects" icon='laptop' :active="currentRoute === '/projects'" />
+      <NavButton :text="t('navbar.contact')" path="/contact" icon="email" :active="currentRoute === '/contact'" />
+      <LanguageSelector />
+    </div>
+  </div>
 </template>
 
 <style scoped>
+.offcanvas {
+  height: unset;
+  background-color: transparent;
+  border: none;
+}
+
+.dragarea {
+  position: fixed;
+  height: 20px;
+  inset: auto 0px 0px;
+  background: white;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+}
+
+.dragarea::before {
+  content: '»';
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+
 .image-container {
   display: flex;
   justify-content: center;

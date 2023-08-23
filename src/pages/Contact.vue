@@ -94,7 +94,7 @@ const sendMail = async () => {
             </span>
 
             <button class="btn btn-primary" v-on:click="sendMail" :disabled="Object.values(errors).some(Boolean)">
-                <send-icon />
+                <send-icon class="icon"/>
                 {{ t('contact.send') }}
             </button>
 
@@ -128,7 +128,7 @@ textarea[error="true"]::placeholder {
     opacity: 0.9;
 }
 
-.fields-container span {
+.fields-container span:not(.icon) {
     display: flex;
     flex-direction: column;
 }
