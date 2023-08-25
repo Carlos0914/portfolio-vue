@@ -6,9 +6,38 @@ import { t } from '../utils/i18n';
 import projects from "../utils/projectsInformation.json"
 import { Carousel } from 'bootstrap'
 import { useHead } from "@unhead/vue"
+import { onMounted, onUnmounted } from 'vue';
 
 useHead({
-  title: () => t('meta.projects'),
+    title: () => t('meta.projects'),
+})
+
+onMounted(() => {
+    const element = document.querySelector('.carousel')
+    const carousel = new Carousel(element, {})
+    element.addEventListener('touchstart', (e) => {
+        const x = e.touches[0].pageX
+        const handler = (e) => {
+            const newX = e.touches[0].pageX
+            const sensitivity = 5
+            if (newX - x > sensitivity) {
+                carousel.prev()
+            }
+            if (x - newX > sensitivity) {
+                carousel.next()
+            }
+
+        }
+        element.addEventListener('touchmove', handler, { passive: true })
+        element.addEventListener('touchend', (e) => {
+            element.removeEventListener('touchmove', handler)
+        })
+    }, { passive: true })
+})
+
+onUnmounted(() => {
+    const element = document.querySelector('.carousel')
+    element.removeEventListener('touchmove')
 })
 </script>
 
@@ -16,7 +45,7 @@ useHead({
     <Navbar />
     <MainContainer :reduce-padding="true">
         <h2>{{ t('navbar.projects') }}</h2>
-        <div id="projectsCarousel" class="custom-carousel carousel slide" data-bs-interval="2500">
+        <div id="projectsCarousel" class="custom-carousel carousel slide" data-bs-slide="next" data-bs-ride="carousel">
             <div>
                 <button class="btn btn-secondary" data-bs-target="#projectsCarousel" data-bs-slide="prev" />
             </div>

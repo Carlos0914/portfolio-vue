@@ -6,15 +6,16 @@ import { t } from '../utils/i18n';
 import LanguageSelector from './LanguageSelector.vue';
 import { router } from "../main"
 import { Offcanvas } from 'bootstrap';
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 const currentRoute = router.currentRoute.value.path
+let offcanvas: Offcanvas | null = null
 
 onMounted(() => {
-  const offcanvas = new Offcanvas(document.getElementById('navigation') as HTMLElement);
-  // offcanvas.hide()
-  (offcanvas as any)._backdrop._config.isVisible = false
+  offcanvas = new Offcanvas(document.getElementById('navigation') as HTMLElement);
 });
+
+onUnmounted(() => offcanvas?.dispose())
 
 
 </script>
