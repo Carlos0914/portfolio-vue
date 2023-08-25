@@ -2,11 +2,11 @@ import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./style.css";
+import 'flag-icon-css/css/flag-icons.min.css'
 import AboutMe from "./pages/AboutMe.vue";
 import Services from "./pages/Services.vue";
 import History from "./pages/History.vue";
 import Projects from "./pages/Projects.vue";
-import FlagIcon from 'vue-flag-icon';
 import Contact from "./pages/Contact.vue";
 import i18n from "./utils/i18n";
 import { createHead } from "@unhead/vue";
@@ -60,7 +60,6 @@ app.component('email', Email);
 app.component('briefcase', Briefcase);
 app.component('laptop', Laptop);
 app.use(head)
-app.use(FlagIcon)
 app.use(i18n);
 app.use(router);
 app.mount("#app");

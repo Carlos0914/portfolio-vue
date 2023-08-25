@@ -30,14 +30,14 @@ onMounted(() => {
   <div style="display: block, position: absolute, right: 32px, bottom: 18px">
     <div class="dropdown" id="language-selector">
       <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        <span :class="`fi fi-${i18n.global.locale === 'en' ? 'us' : 'mx'}`"></span> {{
+        <span :class="`flag flag-icon-${i18n.global.locale === 'en' ? 'us' : 'mx'}`"></span> {{
           i18n.global.locale.toUpperCase()
         }}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#"><span :class="`fi fi-us`"></span>
+        <a class="dropdown-item" href="#"><span :class="`flag flag-icon-us`"></span>
           EN</a>
-        <a class="dropdown-item" href="#"><span :class="`fi fi-mx`"></span>
+        <a class="dropdown-item" href="#"><span :class="`flag flag-icon-mx`"></span>
           ES</a>
       </div>
     </div>
@@ -50,6 +50,12 @@ onMounted(() => {
   width: 85px;
   margin: 0;
   margin-left: auto;
+}
+
+.flag {
+  width: 22px;
+  height: 16px;
+  background-repeat: no-repeat;
 }
 
 .btn {
@@ -65,6 +71,7 @@ onMounted(() => {
 .dropdown-item {
   display: flex;
   gap: 8px;
+  align-items: center;
   margin: 0;
 }
 </style>
