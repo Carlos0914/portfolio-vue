@@ -41,7 +41,7 @@ const sendMail = async () => {
     console.log(errors.value)
     if (!error) {
         const response = await send(
-            "service_29smvu8",
+            "service_74r77qw",
             "template_kcrbnch",
             {
                 from_name: name.value,
